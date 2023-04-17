@@ -13,15 +13,15 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home', page: 'home', displayName: '' });
+  res.render('index', { title: 'AKEA TECH - Home', page: 'home', displayName: '' });
 });
 router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home', page: 'home', displayName: '' });
+  res.render('index', { title: 'AKEA TECH - Home', page: 'home', displayName: '' });
 });
 
 /* GET about */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Me', page: 'about', displayName: '' });
+  res.render('index', { title: 'About Us', page: 'about', displayName: '' });
 });
 
 /* GET business-contact */
