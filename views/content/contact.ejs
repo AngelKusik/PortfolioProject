@@ -1,20 +1,41 @@
-<%- include('../components/header') %>
+<!--
+  Name: Eisha Aqeel, Angelica Kusik
+  Last Updated: April 17, 2023
+  Description: Portfolio Project -this contact page include a short interactive form that allows the user to
+                                  provide thier basic contact information.
+-->
 
-<main class="container">
+<!-- including our contact information in a panel or other construct-->
+<p>To view our contact information, you can have a look at our resumes linked in the <a href="/about">About Us page!</a></p> 
 
-  <h1 class="mt-5">Contacts</h1>
-  <div class="contact-form">
-    <form action="/contacts" method="post">
-      <input type="text" name="firstName" placeholder="First Name" required>
-      <input type="text" name="lastName" placeholder="Last Name" required>
-      <input type="text" name="contactNumber" placeholder="Contact Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+<section id="contact-section">
+  <div id="contact-main-col" class="container">
+    <div class="row justify-content-lg-center g-3 mb-5">
+      <!--A form that asks the user for their contact information (First Name, Last Name, Contact Number, Email Address, Message)-->
+      <form action="/home" method="post" id="contactForm" name="contactForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
+        <div class="input-group mb-3">
+          <span class="input-group-text">First Name</span>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="e.g. John">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Last Name</span>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="e.g. Doe">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Contact Number</span>
+          <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="e.g. 6471234567">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Email Address</span>
+          <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="e.g. johndoe@gmail.com">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Message</span>
+          <textarea class="form-control" aria-label="Short Message" name="message" id="message">  </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitButton"> <i class="fas fa-envelope fa-lg" aria-hidden="true"></i> Send Message</button>
+        <button type="reset" class="btn btn-warning" id="resetButton"> <i class="fas fa-undo fa-lg" aria-hidden="true"></i> Cancel</button>
+      </form>
+    </div>
   </div>
-  </main>
-
-
-<!-- Footer Section -->
-<%- include('../components/footer') %>
+</section>

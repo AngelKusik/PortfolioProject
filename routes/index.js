@@ -30,8 +30,8 @@ router.get('/business-contacts', function(req, res, next) {
 });
 
 /* GET contacts */
-router.get('/contacts', function(req, res, next) {
-  res.render('index', { title: 'contacts', page: 'contacts', displayName: '' });
+router.get('/contact', function(req, res, next) {
+  res.render('index', { title: 'Contact Us', page: 'contact', displayName: '' });
 });
 
 /* GET login */
