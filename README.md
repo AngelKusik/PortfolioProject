@@ -1,2 +1,2 @@
 # PortfolioProject
-A repository for my webd6201 ExpressJs Portfolio Project
+A repository for the WEBD6201 ExpressJs Portfolio Project.
