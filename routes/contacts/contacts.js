@@ -22,8 +22,6 @@ router.get('/:id', async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
     
-    //res.json(contact);
-    //res.render('../views/content/update-contacts', { contact }); 
     res.render('index', { title: 'Contacts', page: 'contacts', displayName: '', contact }); 
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -38,8 +36,6 @@ router.get('/update/:id', async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
     
-    //res.json(contact);
-    //res.render('../views/content/update-contacts', { contact }); 
     res.render('index', { title: 'Contacts', page: 'contacts', displayName: '', contact }); 
   } catch (err) {
     res.status(500).json({ error: err.message });
