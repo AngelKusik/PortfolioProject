@@ -76,7 +76,7 @@ router.post('/delete/:id', async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
     //res.json({ message: 'Contact deleted' });
-    res.redirect('/home');
+    res.redirect('/business-contacts');
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

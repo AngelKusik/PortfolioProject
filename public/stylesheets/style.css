@@ -191,3 +191,7 @@ body {
   padding-top: 50px; 
 }
 
+.bg-primary-table {
+  background-color: var(--primary-color);
+}
+
