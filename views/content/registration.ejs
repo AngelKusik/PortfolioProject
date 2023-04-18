@@ -5,26 +5,26 @@
 -->
 <section id="contact-section">
   <div id="contact-main-col">
-    <div class="row justify-content-lg-center g-3 mb-5">
-      <form action="/register" method="post" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
+    <div class="row g-3 mb-5 mt-3">
+      <form action="/register" method="post" id="contactForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
         <div class="input-group mb-3">
-          <label for="firstName">First Name:</label>
+          <span class="input-group-text">First Name</span>
           <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
         </div>
         <div class="input-group mb-3">
-          <label for="lastName">Last Name:</label>
+          <span class="input-group-text">Last Name</span>
           <input type="text" id="lastName" name="lastName" required placeholder="e.g. Doe">
         </div>
         <div class="input-group mb-3">
-          <label for="email">Email Address:</label>
+          <span class="input-group-text">Email</span>
           <input type="email" id="email" name="email" required placeholder="e.g. johndoe@gmail.com">
         </div>
         <div class="input-group mb-3">
-          <label for="username">Username:</label>
+          <span class="input-group-text">Username</span>
           <input type="text" id="username" name="username" required placeholder="e.g. johndoe">
         </div>
         <div class="input-group mb-3">
-          <label for="password">Password:</label>
+          <span class="input-group-text">Password</span>
           <input type="password" id="password" name="password" required>
         </div>
         <input type="submit" value="Register" class="btn btn-primary">
