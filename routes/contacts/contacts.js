@@ -48,7 +48,7 @@ router.post('/', async (req, res) => {
     const newContact = new Contact(req.body);
     const savedContact = await newContact.save();
     //res.status(201).json(savedContact);
-    res.redirect('/business-contacts');
+    res.redirect('/home');
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -62,7 +62,7 @@ router.post('/update/:id', async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
     //res.json(updatedContact);
-    res.redirect('/business-contacts');
+    res.redirect('/home');
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -76,7 +76,7 @@ router.post('/delete/:id', async (req, res) => {
       return res.status(404).json({ message: 'Contact not found' });
     }
     //res.json({ message: 'Contact deleted' });
-    res.redirect('/business-contacts');
+    res.redirect('/home');
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

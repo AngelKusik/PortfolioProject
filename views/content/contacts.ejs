@@ -12,7 +12,7 @@
   <div id="contact-main-col">
     <div class="row justify-content-lg-center g-3 mb-5">
       <!--A form that asks the user for their contact information (First Name, Last Name, Contact Number, Email Address, Message)-->
-      <form action="/home" method="post" id="contactForm" name="contactForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
+      <form action="/contacts" method="post" id="contactForm" name="contactForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
         <div class="input-group mb-3">
           <span class="input-group-text">First Name</span>
           <input type="text" class="form-control" id="firstName" name="firstName" placeholder="e.g. John">
@@ -27,7 +27,7 @@
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">Email Address</span>
-          <input type="text" class="form-control" id="emailAddress" name="emailAddress" placeholder="e.g. johndoe@gmail.com">
+          <input type="text" class="form-control" id="email" name="email" placeholder="e.g. johndoe@gmail.com">
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text">Message</span>
@@ -39,13 +39,3 @@
     </div>
   </div>
 </section>
-
-<script>
-  // get submit button
-  let submitButton = document.getElementById("submitButton")
-  // add event listener to form's submit button
-  submitButton.addEventListener("click", function (event){
-    // redirect to home page
-    location.href = 'home'
-  })
-</script>
