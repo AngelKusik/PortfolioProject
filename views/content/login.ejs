@@ -1,20 +1,23 @@
-<%- include('../components/header') %>
+<!-- Display validation errors -->
+<% if (error != null) { %>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<% } %>
 
-  <main class="container">
-
-    <h1 class="mt-5">Login Page</h1>
-    <form action="/login" method="POST">
-      <!-- Add your login form fields here, e.g. email and password inputs -->
-      <input type="username" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <button type="submit">Login</button>
-    </form>
-    
-    <p>Don't have an account? <a href="/register">Register</a></p> 
-  </main>
-  
-
-  <!-- Footer Section -->
-  <%- include('../components/footer') %>
+<!-- Display logout message-->
+<% if (msg && msg !== '') { %>
+  <div class="alert alert-success" role="alert">
+    You have been successfully logged out.
+  </div>
+<% } %>
 
 
+<form action="/login" method="POST">
+  <!-- Add your login form fields here, e.g. email and password inputs -->
+  <input type="username" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account? <a href="/register">Register</a></p>

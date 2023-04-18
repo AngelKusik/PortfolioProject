@@ -6,20 +6,23 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-//var userRouter = require('./routes/users');
-
-// var indexRouter = require('./routes/index');
-// var homeRouter = require('./routes/users/home');
-// var aboutRouter = require('./routes/users/about');
-// var projectsRouter = require('./routes/users/projects');
-// var servicesRouter = require('./routes/users/services');
-// var contactRouter = require('./routes/users/contact');
-// var loginRouter = require('./routes/users/login');
-// var registerRouter = require('./routes/users/register');
-// var contactRouter = require('./routes/contacts/contacts');
-// var businessContactRouter = require('./routes/contacts/business-contacts');
+var loginRouter = require('./routes/users/login');
+var registerRouter = require('./routes/users/register');
+var contactRouter = require('./routes/contacts/contacts');
+var businessContactRouter = require('./routes/contacts/business-contacts');
+var logoutRouter = require('./routes/users/logout');
 
 const app = express();
+
+// Set Up Settion
+const session = require('express-session');
+
+// Set up session middleware
+app.use(session({
+  secret: 'angelicaeisha2023',
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Connect to MongoDB online
 mongoose.connect('mongodb+srv://angelicakusik:8RacUbdRqyoQzXkL@portfolio.oxgbw37.mongodb.net/portfolio', { 
@@ -45,21 +48,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-//app.use('/users', userRouter);
-
-//app.use('/', indexRouter); was commented before
-// app.use('/', homeRouter);
-// app.use('/home', homeRouter);
-// app.use('/about', aboutRouter);
-// app.use('/projects', projectsRouter);
-// app.use('/services', servicesRouter);
-// app.use('/contact', contactRouter);
-// app.use('/login', loginRouter);
-// app.use('/register', registerRouter);
-// app.use('/contacts', contactRouter);
-// app.use('/contacts/update', contactRouter);
-// app.use('/contacts/delete', contactRouter);
-// app.use('/business-contacts', businessContactRouter);
+app.use('/home', indexRouter);
+app.use('/about', indexRouter);
+app.use('/projects', indexRouter);
+app.use('/services', indexRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/contacts', contactRouter);
+app.use('/contacts/update', contactRouter);
+app.use('/contacts/delete', contactRouter);
+app.use('/business-contacts', businessContactRouter);
+app.use('/logout', logoutRouter);
 
 
 // catch 404 and forward to error handler

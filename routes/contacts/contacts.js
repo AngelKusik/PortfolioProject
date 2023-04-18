@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const contacts = await Contact.find();
     //res.json(contacts);
-    res.render('../views/content/contacts'); 
+    res.render('index', { title: 'Contacts', page: 'contacts', displayName: '' }); 
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -23,7 +23,8 @@ router.get('/:id', async (req, res) => {
     }
     
     //res.json(contact);
-    res.render('../views/content/update-contacts', { contact }); 
+    //res.render('../views/content/update-contacts', { contact }); 
+    res.render('index', { title: 'Contacts', page: 'contacts', displayName: '', contact }); 
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -38,7 +39,8 @@ router.get('/update/:id', async (req, res) => {
     }
     
     //res.json(contact);
-    res.render('../views/content/update-contacts', { contact }); 
+    //res.render('../views/content/update-contacts', { contact }); 
+    res.render('index', { title: 'Contacts', page: 'contacts', displayName: '', contact }); 
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

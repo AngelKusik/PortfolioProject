@@ -1,41 +1,36 @@
-<%- include('../components/header') %>
+<h2 class="mt-5">
+  <%= contact._id ? 'Edit Contact' : 'Add New Contact' %>
+</h2>
+<div class="contact-form">
+  <!-- Form to update or create a contact -->
+  <form action="/contacts/update/<%= contact._id  ? contact._id  : '' %>" method="POST">
+    <!-- Contact First Name input field -->
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" value="<%= contact ? contact.firstName  : '' %>">
 
-<main class="container">
+    <!-- Contact Last Name input field -->
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" value="<%= contact ? contact.lastName  : '' %>">
 
-  <h1 class="mt-5"><%= contact._id ? 'Edit Contact' : 'Add New Contact' %></h1>
-  <div class="contact-form">
-<!-- Form to update or create a contact -->
-<form action="/contacts/update/<%= contact._id  ? contact._id  : '' %>" method="POST">
-  <!-- Contact First Name input field -->
-  <label for="firstName">First Name</label>
-  <input type="text" id="firstName" name="firstName" value="<%= contact ? contact.firstName  : '' %>">
+    <!-- Contact Number input field -->
+    <label for="contactNumber">Contact Number</label>
+    <input type="text" id="contactNumber" name="contactNumber" value="<%= contact ? contact.contactNumber  : '' %>">
 
-  <!-- Contact Last Name input field -->
-  <label for="lastName">Last Name</label>
-  <input type="text" id="lastName" name="lastName" value="<%= contact ? contact.lastName  : '' %>">
+    <!-- Email Address input field -->
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" value="<%= contact ? contact.email  : '' %>">
 
-  <!-- Contact Number input field -->
-  <label for="contactNumber">Contact Number</label>
-  <input type="text" id="contactNumber" name="contactNumber" value="<%= contact ? contact.contactNumber  : '' %>">
+    <!-- Message input field -->
+    <label for="message">Message</label>
+    <input type="text" id="message" name="message" value="<%= contact ? contact.message  : '' %>">
 
-  <!-- Email Address input field -->
-  <label for="email">Email Address</label>
-  <input type="email" id="email" name="email" value="<%= contact ? contact.email  : '' %>">
-
-  <!-- Message input field -->
-  <label for="message">Message</label>
-  <input type="text" id="message" name="message" value="<%= contact ? contact.message  : '' %>">
-
-  <!-- Edit or Add button based on whether contactId is present -->
-  <!-- <input type="submit" value="<%= contact._id ? 'Edit' : 'Add' %>"> -->
-  <input type="submit" value="Edit">
-</form>
-<form action="/contacts/delete/<%= contact._id %>" method="POST">
-  <input type="submit" value="Delete">
-</form>
-<a href="/business-contacts"><button type="button">Cancel</button></a>
+    <!-- Edit or Add button based on whether contactId is present -->
+    <!-- <input type="submit" value="<%= contact._id ? 'Edit' : 'Add' %>"> -->
+    <input type="submit" value="Edit">
+  </form>
+  <form action="/contacts/delete/<%= contact._id %>" method="POST">
+    <input type="submit" value="Delete">
+  </form>
+  <a href="/business-contacts"><button type="button">Cancel</button></a>
 </div>
 </main>
-
-<!-- Footer Section -->
-<%- include('../components/footer') %>
