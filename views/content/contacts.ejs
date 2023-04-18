@@ -9,7 +9,7 @@
 <p>To view our contact information, you can have a look at our resumes linked in the <a href="/about">About Us page!</a></p> 
 
 <section id="contact-section">
-  <div id="contact-main-col" class="container">
+  <div id="contact-main-col">
     <div class="row justify-content-lg-center g-3 mb-5">
       <!--A form that asks the user for their contact information (First Name, Last Name, Contact Number, Email Address, Message)-->
       <form action="/home" method="post" id="contactForm" name="contactForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
@@ -39,3 +39,13 @@
     </div>
   </div>
 </section>
+
+<script>
+  // get submit button
+  let submitButton = document.getElementById("submitButton")
+  // add event listener to form's submit button
+  submitButton.addEventListener("click", function (event){
+    // redirect to home page
+    location.href = 'home'
+  })
+</script>

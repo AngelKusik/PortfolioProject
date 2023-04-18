@@ -8,13 +8,13 @@ router.get('/', async (req, res) => {
   const user = req.session.user;
   if (!user) {
     // if not, redirect to login page
-    return res.render('index', { title: 'Login Page', page: 'login', displayName: '', error: 'You must login to access the business contacts page'});
+    return res.render('index', { title: 'Login Page', page: 'login', displayName: '', error: 'You must login to access the business contacts page', msg: ''});
   }else{
     try {
       // Fetch all contacts from the database
       const contacts = await Contact.find({});
       //res.render('../views/content/business-contacts', { contacts }); // Render the business-contacts view with contacts data
-      res.render('index', { title: 'Business Contacts List', page: 'business-contacts', displayName: '', contacts, error: null }); // Render the business-contacts view with contacts data
+      res.render('index', { title: 'Business Contacts List', page: 'business-contacts', displayName: '', contacts, error: null, msg: '' }); // Render the business-contacts view with contacts data
     } catch (err) {
       // Handle error
       console.error(err);
