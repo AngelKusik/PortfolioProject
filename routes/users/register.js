@@ -4,8 +4,8 @@ const User = require('../models/user.model');
 
 /* GET users listing. */
 router.get('/', (req, res) => {
-  res.render('../views/content/registration'); // Render registration.ejs
-});
+  res.render('index', { title: 'Registration', page: 'registration', displayName: '' }); // Render registration.ejs
+});  
 
 // Register a new user
 router.post('/', async (req, res) => {
