@@ -17,12 +17,22 @@
   </div>
 <% } %>
 
+<section id="login-section">
+  <div id="contact-main-col" class="container">
+    <form action="/login" method="POST" name="loginForm" class="col-lg-6 col-md-10 col-sm-10 mb-5 pb-5">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Username</span>
+        <input type="username" name="username" placeholder="Username">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Password</span>
+        <input type="password" name="password" placeholder="Password">
+      </div>
+      <button id="submitButton" type="submit"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i> Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="/register">Register</a></p>
+  </div>
+ 
 
-<form action="/login" method="POST">
-  <!-- Add your login form fields here, e.g. email and password inputs -->
-  <input type="username" name="username" placeholder="Username">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit">Login</button>
-</form>
-
-<p>Don't have an account? <a href="/register">Register</a></p>
+</section>
